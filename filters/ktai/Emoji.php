@@ -149,9 +149,7 @@ class Emoji
 
   static public function convert($str)
   {
-    // $regexp = '/\[([ies]:[0-9]{1,3})\]/';
-    // $regexp = '/\[([ies\*]):([\x21-\x7E]+)\]/';
-    $regexp = '/\[([ies\*]):([\x21-\x7E]{1,3})\]/';
+    $regexp = '/\[([ies\*]):([0-9a-z#]+)\]/';
     return preg_replace_callback($regexp, array('Emoji', 'convert_callback'), $str);
   }
 
@@ -267,6 +265,7 @@ class Emoji
 
   static public $charMap = array(
     'fine'               => array(1  , 44 , 74 ),
+    'good'               => array(204, 287,  14),
     'cloud'              => array(2  , 107, 73 ),
     'rain'               => array(3  , 95 , 75 ),
     'sown'               => array(4  , 191, 72 ),
@@ -314,6 +313,9 @@ class Emoji
     '9'                  => array(133, 188, 216),
     '0'                  => array(134, 325, 217),
     'ok'                 => array(135, 326, 257),
+    'heart'              => array(136, 51 , 34),
+    'sheart'             => array(137, 803, 309),
+    'hearts'             => array(139, 328, 309),
     'up'                 => array(145, 731, 234),
     'mnote'              => array(146, 343, 62 ),
     'bright'             => array(150, 420, 316),
